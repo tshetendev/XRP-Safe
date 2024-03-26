@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#transactionTable {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    
+}
+
+table {
+    width: 50%;
+    /* border-collapse: collapse; */
+    text-align: center;
+}
+
+table th, table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    /* background-color: #f2f2f2; */
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+#goBackButton{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}

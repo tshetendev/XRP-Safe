@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="walletAddress">Wallet Address:</label>
+                <input type="text" id="walletAddress" name="walletAddress" required>
+            </div>
+            <div class="form-group">
+                <label for="walletSecret">Wallet Secret:</label>
+                <input type="password" id="walletSecret" name="walletSecret" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

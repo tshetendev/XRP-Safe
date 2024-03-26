@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Transactions</title>
+    <link rel="stylesheet" href="css/transactions.css">
+</head>
+<body>
+    <h1>Transactions</h1>
+    <div id="transactionTable"></div>
+    <button id="goBackButton">Go Back</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                const response = await fetch('/transactions');
+                const data = await response.json();
+
+                if (response.ok) {
+                    const transactions = data.transactions;
+
+                    if (transactions.length === 0) {
+                        document.getElementById('transactionTable').innerHTML = '<p>No transactions found.</p>';
+                    } else {
+                        const table = document.createElement('table');
+                        table.innerHTML = `
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Sender</th>
+                                <th>Receiver</th>
+                                <th>Amount (XRP)</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        `;
+
+                        transactions.forEach(transaction => {
+                            const row = table.insertRow();
+                            row.innerHTML = `
+                                <td>${transaction.transactionId}</td>
+                                <td>${transaction.sender}</td>
+                                <td>${transaction.receiver}</td>
+                                <td>${transaction.amount}</td>
+                                <td>${new Date(transaction.timestamp).toLocaleString()}</td>
+                            `;
+                        });
+
+                        document.getElementById('transactionTable').appendChild(table);
+                    }
+                } else {
+                    document.getElementById('transactionTable').innerHTML = `<p>Error: ${data.error}</p>`;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('transactionTable').innerHTML = '<p>An error occurred. Please try again.</p>';
+            }
+        });
+
+        // Add event listener for the "Go Back" button
+        document.getElementById('goBackButton').addEventListener('click', function() {
+            window.history.back(); // Go back to the previous page
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Balance</title>
+    <link rel="stylesheet" href="css/wallet.css">
+    <script src="./js/wallet.js"></script>
+</head>
+
+<body>
+    <div id="balanceDisplay">
+        <img src="./util/xrp.jpg" alt="XRP Logo" id="xrp">
+
+        <h1>XRPSafe</h1>
+
+        <p id="balance"></p>
+
+        <div id="allTransactions">
+        </div>
+
+        <div id="profileInfo">
+            <p>Wallet Address: <br>
+                <span id="walletAddress"></span>
+            </p>
+            <p>Wallet Secret: <br>
+                <span id="walletSecret"></span>
+            </p>
+            <button id="showSecretBtn" onclick="toggleSecretVisibility()">Show Secret</button>
+        </div>
+
+        <div class="Walletcontainer">
+            <a id="refreshButton"><img src="./util/refresh.png" alt="Refresh"></a>
+            <div><a href="./send.html">Send</a></div>
+            <div><a href="transaction.html">Transactions</a></div>
+        </div>
+
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+
+    
+</body>
+
+</html>

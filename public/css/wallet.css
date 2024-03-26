@@ -1,0 +1,72 @@
+#balanceDisplay {
+    width: 30%;
+    height: 80vh;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+#balance {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+
+#refreshButton img {
+    width: 10px;
+    /* height: 30px; */
+    
+}
+
+#refreshButton {
+    background-color: #007bff;
+}
+
+#refreshButton:hover {
+    background-color: #0056b3;
+}
+
+#errorMessage {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* margin-top: 20px; */
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+.Walletcontainer {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-align: center;
+    margin-left: 23%;
+}
+
+.Walletcontainer > * {
+    margin-right: 10px;
+}
+
+#xrp{
+    width: 70px;
+}
+
+#profileInfo{
+    margin-bottom: 40px;
+}
